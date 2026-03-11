@@ -1,25 +1,30 @@
-Extract all actionable coding rules from the selected text.
-For each rule:
-- Convert to imperative statement starting with ALWAYS, NEVER, PREFER, or AVOID
-- Remove background, rationale, history, author info
-- Preserve code snippets in fenced code blocks with language tags
-- Label good examples with "✅ Do this:" and bad with "❌ Not this:"
-- Classify each rule under ONE of these headings:
-  ## Naming Conventions
-  ## Code Style & Formatting
-  ## Functions & Methods
-  ## Error Handling
-  ## Architecture & Patterns
-  ## Testing
-  ## Security
-  ## Dependencies & Imports
-  ## Documentation & Comments
-  ## Database & Data
-  ## API Design
-  ## Performance
-  ## Git & Version Control
-  ## Framework Specific
+You are creating the final `.github/copilot-instructions.md` file.
 
-Format as markdown with ## headings and bullet points.
-Output ONLY the rules. No explanations.
-If no actionable rules exist in this text, output: (no rules in this section)
+The selected text contains coding rules extracted from multiple sections 
+of our standards document. There are duplicates and inconsistencies.
+
+Do the following:
+1. Start with: # Coding Standards — Copilot Instructions
+2. Merge all rules under these ## headings (remove empty ones):
+   ## Naming Conventions
+   ## Code Style & Formatting
+   ## Functions & Methods
+   ## Error Handling
+   ## Architecture & Patterns
+   ## Testing
+   ## Security
+   ## Dependencies & Imports
+   ## Documentation & Comments
+   ## Database & Data
+   ## API Design
+   ## Performance
+   ## Git & Version Control
+   ## Framework Specific
+3. REMOVE duplicate rules — keep the more specific version
+4. REMOVE generic advice ("write clean code", "follow best practices")
+5. Keep ALL code examples with ✅/❌ labels
+6. Use bullet points (- ) for each rule, 1-2 lines max
+7. Keep total output UNDER 500 lines
+8. If over 500 lines, prioritize: Security > Architecture > Naming > Error Handling > rest
+
+Output ONLY the final markdown. No preamble.
